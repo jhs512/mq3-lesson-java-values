@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "id": "java-values",
+  "revision": "v1.0.0",
+  "title": "자바의 값과 입력·출력",
+  "description": "값의 종류를 구분하고 입력을 계산해요.",
+  "sources": [
+    "https://slog.gg/p/14146"
+  ],
+  "sections": [
+    {
+      "id": "reading-1",
+      "title": "개념 · 처음 실행하고 출력하기",
+      "body": "프로그램은 우리가 적은 순서대로 일을 해요.\nJDK는 자바 코드를 실행하는 개발 도구예요.\n이 과정에서는 JDK 25를 사용해요.\n\n먼저 터미널에서 `java --version`을 확인하세요.\n첫 줄의 버전이 25로 시작해야 해요.\n`javac --version`도 25인지 확인하세요.\n앱의 ‘환경 진단’에서도 실행을 확인할 수 있어요.\n\n코드는 `Main.java`에 적어요.\n`main`의 중괄호 안에 실행할 일을 넣어요.\n`System.out.println`은 출력 뒤에 줄을 바꿔요.\n문자열은 큰따옴표로 감싸요.\n문장 끝에는 세미콜론 `;`을 붙여요.\n\n앱 밖에서는 `java --source 25 Main.java`로 실행해요.\n이 과정은 preview 옵션을 사용하지 않아요.\n처음에는 준비 코드의 바깥 구조를 그대로 두세요.\n\n### 실행 예제\n\n```java\nclass Main {\n    public static void main(String[] args) {\n        // 큰따옴표 안의 글자를 한 줄로 출력해요.\n        System.out.println(\"안녕\");\n    }\n}\n```\n\n예상 출력:\n\n```text\n안녕\n```\n"
+    },
+    {
+      "id": "reading-2",
+      "title": "개념 · 변수와 자료형",
+      "body": "변수는 값을 보관하는 이름이에요.\n`int`는 정수, `double`은 실수를 담아요.\n`String`은 문자열, `boolean`은 참과 거짓을 담죠.\n\n`int price = 1200;`을 살펴볼까요?\nprice라는 정수 변수에 1200을 넣어요.\n`=`는 오른쪽 값을 왼쪽에 저장해요.\n같은지 비교하는 기호는 `==`예요.\n\n숫자는 따옴표 없이 적어요.\n`1200`과 `\"1200\"`은 자료형이 달라요.\n`//` 뒤는 실행하지 않는 설명 주석이에요.\n\n### 실행 예제\n\n```java\nclass Main {\n    public static void main(String[] args) {\n        // 가격을 정수로 보관해요.\n        int price = 1200;\n        System.out.println(price);\n    }\n}\n```\n\n예상 출력:\n\n```text\n1200\n```\n"
+    },
+    {
+      "id": "reading-3",
+      "title": "개념 · 몫과 나머지",
+      "body": "정수끼리 나누면 정수 몫이 나와요.\n`7 / 2`는 3이에요. 소수 부분은 버려요.\n`7 % 2`는 나머지인 1이죠.\n\n괄호 안을 먼저 계산해요.\n곱셈과 나눗셈은 덧셈보다 먼저예요.\n소수 계산은 `7.0 / 2`처럼 실수를 써요.\n결과가 3.5로 달라져요.\n\n### 실행 예제\n\n```java\nclass Main {\n    public static void main(String[] args) {\n        // 정수 나눗셈은 정수 몫을 만들어요.\n        System.out.println(7 / 2);\n    }\n}\n```\n\n예상 출력:\n\n```text\n3\n```\n"
+    },
+    {
+      "id": "reading-4",
+      "title": "개념 · 입력받아 계산하기",
+      "body": "입력은 실행할 때 들어오는 값이에요.\n`Scanner`로 공백 사이의 값을 읽어요.\n`nextInt()`는 다음 정수를 읽어요.\n`next()`는 다음 문자열 한 토큰을 읽죠.\n\n아래 예제는 입력으로 `4 6`을 사용해요.\n각 실행은 새로운 입력에서 시작해요.\n앱의 ‘실행 입력’ 칸에 숫자를 적으세요.\n채점할 때는 여러 입력으로 다시 실행해요.\n한국어 입력도 읽도록 UTF-8을 지정해요.\n\n### 실행 예제\n\n```java\nclass Main {\n    public static void main(String[] args) {\n        // UTF-8 입력에서 정수 두 개를 읽어요.\n        var scanner = new java.util.Scanner(System.in, \"UTF-8\");\n        int a = scanner.nextInt();\n        int b = scanner.nextInt();\n        // 입력값은 실행마다 달라져요.\n        System.out.println(a + b);\n    }\n}\n```\n\n예상 출력:\n\n```text\n10\n```\n\n이 예제의 입력은 `4 6`이에요.\n"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "java25-01-code",
+      "title": "직접 풀기 · 처음 실행하고 출력하기",
+      "goal": "### 목표\n\n첫 줄에 `안녕`, 둘째 줄에 `JDK 25`를 출력하세요.\n안내 문구나 빈 줄은 추가하지 마세요.\n\n### 힌트\n\nprintln을 두 번 호출하세요.",
+      "language": "java",
+      "entry_file": "Main.java",
+      "starter_code": "class Main {\n    public static void main(String[] args) {\n        // 이곳에 코드를 적으세요.\n    }\n}\n",
+      "solution": "class Main {\n    public static void main(String[] args) {\n        // 첫 인사는 첫 줄에 남겨요.\n        System.out.println(\"안녕\");\n        // 다음 호출은 새 줄에 출력해요.\n        System.out.println(\"JDK 25\");\n    }\n}\n",
+      "files": {},
+      "tests": [
+        {
+          "input": "",
+          "expected": "안녕\nJDK 25\n"
+        }
+      ],
+      "web_checks": [],
+      "mutations": [],
+      "required": true,
+      "narration": [
+        {
+          "action": "say",
+          "target": "problem",
+          "text": "첫 줄에 `안녕`, 둘째 줄에 `JDK 25`를 출력하세요.\n안내 문구나 빈 줄은 추가하지 마세요."
+        },
+        {
+          "action": "set_code",
+          "code": "class Main {\n    public static void main(String[] args) {\n        // 큰따옴표 안의 글자를 한 줄로 출력해요.\n        System.out.println(\"안녕\");\n    }\n}\n",
+          "say": "먼저 작은 예제를 실행해 볼게요."
+        },
+        {
+          "action": "run"
+        },
+        {
+          "action": "say",
+          "target": "output",
+          "text": "예제 출력은 안녕예요."
+        },
+        {
+          "action": "say",
+          "target": "editor",
+          "text": "작은따옴표는 문자열용이 아니에요. 큰따옴표를 쓰세요."
+        },
+        {
+          "action": "set_code",
+          "code": "class Main {\n    public static void main(String[] args) {\n        // 첫 인사는 첫 줄에 남겨요.\n        System.out.println(\"안녕\");\n        // 다음 호출은 새 줄에 출력해요.\n        System.out.println(\"JDK 25\");\n    }\n}\n",
+          "say": "이제 문제의 입력과 출력에 맞춰 확장해요."
+        },
+        {
+          "action": "run"
+        },
+        {
+          "action": "say",
+          "target": "output",
+          "text": "첫 예제의 결과는 안녕, JDK 25예요."
+        },
+        {
+          "action": "submit",
+          "say": "다른 입력도 통과하는지 제출해요."
+        }
+      ],
+      "source_hash": "63df4c33c28c7559097e3df235a89a1fe708f6123e038736115594bae3d325d4"
+    },
+    {
+      "id": "java25-02-code",
+      "title": "직접 풀기 · 변수와 자료형",
+      "goal": "### 목표\n\n가격 1200과 수량 3을 각각 변수에 저장하세요.\n두 변수를 곱한 총액을 한 줄로 출력하세요.\n\n### 힌트\n\nint total = price * quantity;를 사용해 보세요.",
+      "language": "java",
+      "entry_file": "Main.java",
+      "starter_code": "class Main {\n    public static void main(String[] args) {\n        // 이곳에 코드를 적으세요.\n    }\n}\n",
+      "solution": "class Main {\n    public static void main(String[] args) {\n        // 가격과 수량은 계산할 숫자예요.\n        int price = 1200;\n        int quantity = 3;\n        // 곱한 결과를 total에 보관해요.\n        int total = price * quantity;\n        System.out.println(total);\n    }\n}\n",
+      "files": {},
+      "tests": [
+        {
+          "input": "",
+          "expected": "3600\n"
+        }
+      ],
+      "web_checks": [],
+      "mutations": [],
+      "required": true,
+      "narration": [
+        {
+          "action": "say",
+          "target": "problem",
+          "text": "가격 1200과 수량 3을 각각 변수에 저장하세요.\n두 변수를 곱한 총액을 한 줄로 출력하세요."
+        },
+        {
+          "action": "set_code",
+          "code": "class Main {\n    public static void main(String[] args) {\n        // 가격을 정수로 보관해요.\n        int price = 1200;\n        System.out.println(price);\n    }\n}\n",
+          "say": "먼저 작은 예제를 실행해 볼게요."
+        },
+        {
+          "action": "run"
+        },
+        {
+          "action": "say",
+          "target": "output",
+          "text": "예제 출력은 1200예요."
+        },
+        {
+          "action": "say",
+          "target": "editor",
+          "text": "숫자를 큰따옴표로 감싸면 문자열이 돼요. 곱셈에 쓰지 마세요."
+        },
+        {
+          "action": "set_code",
+          "code": "class Main {\n    public static void main(String[] args) {\n        // 가격과 수량은 계산할 숫자예요.\n        int price = 1200;\n        int quantity = 3;\n        // 곱한 결과를 total에 보관해요.\n        int total = price * quantity;\n        System.out.println(total);\n    }\n}\n",
+          "say": "이제 문제의 입력과 출력에 맞춰 확장해요."
+        },
+        {
+          "action": "run"
+        },
+        {
+          "action": "say",
+          "target": "output",
+          "text": "첫 예제의 결과는 3600예요."
+        },
+        {
+          "action": "submit",
+          "say": "다른 입력도 통과하는지 제출해요."
+        }
+      ],
+      "source_hash": "fb943af2ae60ca7a12ff8bb262ca613b7d87d77d58da391fc412c97a567b2b29"
+    },
+    {
+      "id": "java25-03-code",
+      "title": "직접 풀기 · 몫과 나머지",
+      "goal": "### 목표\n\n빵 17개를 5개씩 포장해요.\n완성한 묶음 수와 남은 빵 수를 각각 출력하세요.\n\n### 힌트\n\n/와 %를 각각 한 번 사용하세요.",
+      "language": "java",
+      "entry_file": "Main.java",
+      "starter_code": "class Main {\n    public static void main(String[] args) {\n        // 이곳에 코드를 적으세요.\n    }\n}\n",
+      "solution": "class Main {\n    public static void main(String[] args) {\n        // 전체와 한 묶음의 크기를 보관해요.\n        int breads = 17;\n        int bundleSize = 5;\n        // /는 몫, %는 남은 개수를 구해요.\n        System.out.println(breads / bundleSize);\n        System.out.println(breads % bundleSize);\n    }\n}\n",
+      "files": {},
+      "tests": [
+        {
+          "input": "",
+          "expected": "3\n2\n"
+        }
+      ],
+      "web_checks": [],
+      "mutations": [],
+      "required": true,
+      "narration": [
+        {
+          "action": "say",
+          "target": "problem",
+          "text": "빵 17개를 5개씩 포장해요.\n완성한 묶음 수와 남은 빵 수를 각각 출력하세요."
+        },
+        {
+          "action": "set_code",
+          "code": "class Main {\n    public static void main(String[] args) {\n        // 정수 나눗셈은 정수 몫을 만들어요.\n        System.out.println(7 / 2);\n    }\n}\n",
+          "say": "먼저 작은 예제를 실행해 볼게요."
+        },
+        {
+          "action": "run"
+        },
+        {
+          "action": "say",
+          "target": "output",
+          "text": "예제 출력은 3예요."
+        },
+        {
+          "action": "say",
+          "target": "editor",
+          "text": "묶음 크기가 0이면 나눗셈을 할 수 없어요. 5를 사용하세요."
+        },
+        {
+          "action": "set_code",
+          "code": "class Main {\n    public static void main(String[] args) {\n        // 전체와 한 묶음의 크기를 보관해요.\n        int breads = 17;\n        int bundleSize = 5;\n        // /는 몫, %는 남은 개수를 구해요.\n        System.out.println(breads / bundleSize);\n        System.out.println(breads % bundleSize);\n    }\n}\n",
+          "say": "이제 문제의 입력과 출력에 맞춰 확장해요."
+        },
+        {
+          "action": "run"
+        },
+        {
+          "action": "say",
+          "target": "output",
+          "text": "첫 예제의 결과는 3, 2예요."
+        },
+        {
+          "action": "submit",
+          "say": "다른 입력도 통과하는지 제출해요."
+        }
+      ],
+      "source_hash": "e4ac8af4db1c9c673dc40d5e0918a2a1fdd55b0179f3202ae1e4e72d7c024959"
+    },
+    {
+      "id": "java25-04-code",
+      "title": "직접 풀기 · 입력받아 계산하기",
+      "goal": "### 목표\n\n정수 두 개를 입력받아 합을 출력하세요.\n입력은 -1000부터 1000까지의 정수예요.\n입력을 요청하는 안내 글은 출력하지 마세요.\n\n### 힌트\n\nnextInt()를 두 번 호출하세요.",
+      "language": "java",
+      "entry_file": "Main.java",
+      "starter_code": "class Main {\n    public static void main(String[] args) {\n        // 이곳에 코드를 적으세요.\n    }\n}\n",
+      "solution": "class Main {\n    public static void main(String[] args) {\n        // 공백과 줄바꿈으로 나뉜 입력을 읽어요.\n        var scanner = new java.util.Scanner(System.in, \"UTF-8\");\n        int first = scanner.nextInt();\n        int second = scanner.nextInt();\n        // 예제 숫자를 직접 적지 않고 입력으로 계산해요.\n        System.out.println(first + second);\n    }\n}\n",
+      "files": {},
+      "tests": [
+        {
+          "input": "4 6\n",
+          "expected": "10\n"
+        },
+        {
+          "input": "-3 8\n",
+          "expected": "5\n"
+        },
+        {
+          "input": "0 0\n",
+          "expected": "0\n"
+        },
+        {
+          "input": "1000 -1000\n",
+          "expected": "0\n"
+        }
+      ],
+      "web_checks": [],
+      "mutations": [],
+      "required": true,
+      "narration": [
+        {
+          "action": "say",
+          "target": "problem",
+          "text": "정수 두 개를 입력받아 합을 출력하세요.\n입력은 -1000부터 1000까지의 정수예요.\n입력을 요청하는 안내 글은 출력하지 마세요."
+        },
+        {
+          "action": "set_code",
+          "code": "class Main {\n    public static void main(String[] args) {\n        // UTF-8 입력에서 정수 두 개를 읽어요.\n        var scanner = new java.util.Scanner(System.in, \"UTF-8\");\n        int a = scanner.nextInt();\n        int b = scanner.nextInt();\n        // 입력값은 실행마다 달라져요.\n        System.out.println(a + b);\n    }\n}\n",
+          "say": "먼저 작은 예제를 실행해 볼게요."
+        },
+        {
+          "action": "run"
+        },
+        {
+          "action": "say",
+          "target": "output",
+          "text": "예제 출력은 10예요."
+        },
+        {
+          "action": "say",
+          "target": "editor",
+          "text": "안내 글을 출력하면 예상 출력과 달라져요. 합만 출력하세요."
+        },
+        {
+          "action": "set_code",
+          "code": "class Main {\n    public static void main(String[] args) {\n        // 공백과 줄바꿈으로 나뉜 입력을 읽어요.\n        var scanner = new java.util.Scanner(System.in, \"UTF-8\");\n        int first = scanner.nextInt();\n        int second = scanner.nextInt();\n        // 예제 숫자를 직접 적지 않고 입력으로 계산해요.\n        System.out.println(first + second);\n    }\n}\n",
+          "say": "이제 문제의 입력과 출력에 맞춰 확장해요."
+        },
+        {
+          "action": "run"
+        },
+        {
+          "action": "say",
+          "target": "output",
+          "text": "첫 예제의 결과는 10예요."
+        },
+        {
+          "action": "submit",
+          "say": "다른 입력도 통과하는지 제출해요."
+        }
+      ],
+      "source_hash": "3a099c2507668f96072d82bbbe9658dcdccf7f35d6ae421b688dc44905d3cb3e"
+    }
+  ]
+}
